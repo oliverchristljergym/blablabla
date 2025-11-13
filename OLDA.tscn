@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://clrgdp3emahux"]
+[gd_scene load_steps=2 format=3 uid="uid://clrgdp3emahux"]
+
+[ext_resource type="Texture2D" uid="uid://iptafrt88jf" path="res://Sprites/homepage-02-header-logo-min.png" id="1_lp2e3"]
 
 [node name="Olda" type="Node2D"]
+
+[node name="Homepage02HeaderLogoMin" type="Sprite2D" parent="."]
+position = Vector2(459, 76)
+texture = ExtResource("1_lp2e3")
