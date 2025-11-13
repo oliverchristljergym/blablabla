@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://8sjrwpteji8f"]
+
+[ext_resource type="Texture2D" uid="uid://iptafrt88jf" path="res://Sprites/homepage-02-header-logo-min.png" id="1_8tkqs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Homepage02HeaderLogoMin" type="Sprite2D" parent="."]
+position = Vector2(451, 79)
+texture = ExtResource("1_8tkqs")
