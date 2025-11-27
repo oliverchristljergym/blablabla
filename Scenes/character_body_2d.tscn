@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvmcfxbpag7s"]
+
+[ext_resource type="Texture2D" uid="uid://waib1vmcahpk" path="res://Sprites/eleven.front-depositphotos-bgremover.png" id="1_ymxaj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88kja"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AgentAnimator" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AgentAnimator"]
+root_node = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="AgentAnimator"]
+texture = ExtResource("1_ymxaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_88kja")
