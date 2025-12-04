@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://waib1vmcahpk" path="res://Sprites/eleven.front-depositphotos-bgremover.png" id="1_ymxaj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88kja"]
+radius = 5.0
+height = 24.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="eleven" type="CharacterBody2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -14,7 +16,11 @@
 root_node = NodePath("../..")
 
 [node name="Sprite2D" type="Sprite2D" parent="AgentAnimator"]
+position = Vector2(-2, -2)
+scale = Vector2(0.035, 0.035)
 texture = ExtResource("1_ymxaj")
+region_enabled = true
+region_rect = Rect2(0, 0, 500, 1000)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_88kja")
