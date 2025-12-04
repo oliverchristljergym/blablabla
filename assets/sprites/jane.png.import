@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df4dgfiujmgem"
-path="res://.godot/imported/st bloky.png-fd4eee75a2620237089e87ba142510d6.ctex"
+uid="uid://c5b280k1asjv7"
+path="res://.godot/imported/jane.png-bb618b427fe11c71d08b98f2894ab23f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/st bloky.png"
-dest_files=["res://.godot/imported/st bloky.png-fd4eee75a2620237089e87ba142510d6.ctex"]
+source_file="res://assets/sprites/jane.png"
+dest_files=["res://.godot/imported/jane.png-bb618b427fe11c71d08b98f2894ab23f.ctex"]
 
 [params]
 
