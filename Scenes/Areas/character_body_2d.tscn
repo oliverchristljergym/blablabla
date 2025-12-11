@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kvrntc4r2ujf"]
 
-[ext_resource type="Script" uid="uid://dyygbn7tmxh17" path="res://Scripts/character_body_2d_controller.gd" id="1_8wh50"]
+[ext_resource type="Script" uid="uid://dgdbg80rhdic5" path="res://Scenes/Areas/character_body_2d_control.gd" id="1_8wh50"]
 [ext_resource type="Texture2D" uid="uid://waib1vmcahpk" path="res://Sprites/eleven.front-depositphotos-bgremover.png" id="2_1smjr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88kja"]
