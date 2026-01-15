@@ -11,6 +11,8 @@ height = 262.0
 script = ExtResource("1_1qwsi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(500, -200)
+zoom = Vector2(2, 2)
 
 [node name="agentanimator" type="Node2D" parent="."]
 
