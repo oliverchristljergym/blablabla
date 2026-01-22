@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name ElkaController
 
 @export var speed = 20.0
 @export var jump_power = 20.0

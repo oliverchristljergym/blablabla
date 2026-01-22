@@ -1,25 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bku64bqdnba3f"]
+[gd_scene load_steps=11 format=3 uid="uid://bku64bqdnba3f"]
 
 [ext_resource type="Script" uid="uid://b06bhi2erhf1q" path="res://assets/scripts/elka_controller.gd" id="1_be2yc"]
 [ext_resource type="Texture2D" uid="uid://vpd06j6tiye4" path="res://assets/sprites/el.png" id="2_k4ryf"]
-
-[sub_resource type="Animation" id="Animation_be2yc"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("agentanimator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(30, 50, 70, 161), Rect2(275, 50, 117, 161), Rect2(396, 50, 109, 161), Rect2(510, 50, 139, 161), Rect2(511, 207, 116, 149), Rect2(633, 207, 109, 154), Rect2(746, 216, 94, 160), Rect2(749, 382, 87, 161)]
-}
+[ext_resource type="Script" uid="uid://cnluvn5jaydic" path="res://assets/scripts/agent_animator.gd" id="2_utlvd"]
 
 [sub_resource type="Animation" id="Animation_k4ryf"]
 length = 0.001
@@ -33,13 +16,86 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(30, 50, 70, 161)]
+"values": [Rect2(749, 382, 87, 161)]
+}
+
+[sub_resource type="Animation" id="Animation_be2yc"]
+resource_name = "idle"
+length = 4.000025
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("agentanimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(29, 50, 71, 161), Rect2(29, 713, 71, 163), Rect2(749, 382, 87, 161), Rect2(464, 529, 84, 160), Rect2(746, 218, 93, 158), Rect2(172, 366.5, 73, 161), Rect2(464, 366, 75, 158), Rect2(749, 381, 87, 162), Rect2(627, 367, 77, 157)]
+}
+
+[sub_resource type="Animation" id="Animation_utlvd"]
+resource_name = "pohyb"
+length = 1.000025
+loop_mode = 1
+step = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("agentanimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.6666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(274, 51, 117, 154), Rect2(396, 51, 109, 154), Rect2(510, 51, 139, 151), Rect2(274, 51, 117, 154)]
+}
+
+[sub_resource type="Animation" id="Animation_ffx7p"]
+resource_name = "skok"
+loop_mode = 1
+step = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("agentanimator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(173, 216, 96, 145)]
+}
+
+[sub_resource type="Animation" id="Animation_uhr06"]
+resource_name = "dopad"
+loop_mode = 1
+step = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("agentanimator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(184, 548, 78, 187)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_utlvd"]
 _data = {
 &"RESET": SubResource("Animation_k4ryf"),
-&"idle": SubResource("Animation_be2yc")
+&"dopad": SubResource("Animation_uhr06"),
+&"idle": SubResource("Animation_be2yc"),
+&"pohyb": SubResource("Animation_utlvd"),
+&"skok": SubResource("Animation_ffx7p")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be2yc"]
@@ -53,13 +109,17 @@ script = ExtResource("1_be2yc")
 offset = Vector2(0, -100)
 zoom = Vector2(2, 2)
 
-[node name="agentanimator" type="Node2D" parent="."]
+[node name="agentanimator" type="Node2D" parent="." node_paths=PackedStringArray("elka_controller", "animation_player", "sprite")]
+script = ExtResource("2_utlvd")
+elka_controller = NodePath("..")
+animation_player = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="agentanimator"]
-position = Vector2(4, -81)
+position = Vector2(0, -94)
 texture = ExtResource("2_k4ryf")
 region_enabled = true
-region_rect = Rect2(30, 50, 70, 161)
+region_rect = Rect2(749, 382, 87, 161)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="agentanimator"]
 root_node = NodePath("../..")
@@ -67,8 +127,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_utlvd")
 }
 autoplay = "idle"
+speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(4, -80.5)
+position = Vector2(0, -98)
 shape = SubResource("CapsuleShape2D_be2yc")
