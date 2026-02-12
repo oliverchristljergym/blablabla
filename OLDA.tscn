@@ -892,7 +892,7 @@ sources/1 = SubResource("TileSetAtlasSource_gfyxn")
 position = Vector2(208, 345)
 
 [node name="Homepage02HeaderLogoMin" type="Sprite2D" parent="."]
-position = Vector2(452, -76)
+position = Vector2(449, -229)
 texture = ExtResource("1_lp2e3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
