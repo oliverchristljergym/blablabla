@@ -15,3 +15,7 @@ func _process(delta):
 	else :
 		animation_player.play("idle")
 		#udelej skakani 22:22
+	if elka_controller.velocity.y < 0.0:
+		animation_player.play("skok")
+	elif elka_controller.velocity.y > 0.0:
+		animation_player.play("dopad")
