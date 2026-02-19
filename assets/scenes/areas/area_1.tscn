@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://djiwho7wwijx4"]
+[gd_scene load_steps=6 format=3 uid="uid://djiwho7wwijx4"]
 
 [ext_resource type="Texture2D" uid="uid://c3lq8gcaovxpk" path="res://assets/sprites/st bloky.png" id="1_db1nh"]
 [ext_resource type="PackedScene" uid="uid://bku64bqdnba3f" path="res://assets/scenes/elka.tscn" id="2_o23ij"]
@@ -440,6 +440,8 @@ texture_region_size = Vector2i(23, 23)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_o23ij")
 
+[sub_resource type="TileSet" id="TileSet_o23ij"]
+
 [node name="area 1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -450,3 +452,7 @@ layer_0/tile_data = PackedInt32Array(-65536, 65537, 0, 0, 65537, 1, -65535, 1310
 
 [node name="elka" parent="." instance=ExtResource("2_o23ij")]
 position = Vector2(32, 7)
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_o23ij")
+format = 2
